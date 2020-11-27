@@ -13,10 +13,9 @@ group: edge
 virt: vm
 sudo: true
 
-install:
-  - pip install Cython
 script:
   - virtualenv toilvenv
   - source toilvenv/bin/activate
+  - pip install Cython>= 0.28.5
   - make prepare
   - make develop
