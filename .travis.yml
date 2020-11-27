@@ -2,9 +2,11 @@
 language: python
 python:
   - "3.6"
-  
+services:
+  - docker  
 os: linux
 arch:
+  - amd64
   - arm64
   - arm64-graviton2
  
