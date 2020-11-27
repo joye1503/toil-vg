@@ -108,7 +108,8 @@ prepare: check_venv
 	$(pip) install numpy>=1.19.0
 	# TODO scikit-learn can't even begin to install unless numpy is already there, so numpy has to be first and by itself.
 	# See https://github.com/scikit-learn/scikit-learn/issues/4164
-	$(pip) install scipy scikit-learn==0.22.1
+	$(pip) install scipy
+	$(pip) install scikit-learn==0.22.1
 	$(pip) install pytest==2.8.3 'toil[aws,mesos]==3.24.0' biopython==1.67 pyvcf==0.6.8
 	pip list
 clean_prepare: check_venv
