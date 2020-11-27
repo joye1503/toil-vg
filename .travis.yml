@@ -19,3 +19,4 @@ script:
   - pip install Cython
   - make prepare
   - make develop
+  - make test
