@@ -16,6 +16,6 @@ sudo: true
 script:
   - virtualenv toilvenv
   - source toilvenv/bin/activate
-  - pip install Cython>= 0.28.5
+  - pip install Cython
   - make prepare
   - make develop
