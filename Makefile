@@ -105,7 +105,7 @@ check_build_reqs:
 
 prepare: check_venv
 	# TODO: numpy cannot build from source correctly on some systems, and installing in a virtualenv fails with --only-binary :all:
-	$(pip) install numpy==1.17.1
+	$(pip) install numpy>=1.19.0
 	# TODO scikit-learn can't even begin to install unless numpy is already there, so numpy has to be first and by itself.
 	# See https://github.com/scikit-learn/scikit-learn/issues/4164
 	$(pip) install scipy scikit-learn==0.22.1
@@ -115,7 +115,7 @@ clean_prepare: check_venv
 	$(pip) uninstall -y pytest biopython numpy scipy scikit-learn pyvcf
 
 check_venv:
-	@$(python) -c 'import sys; sys.exit( int( not hasattr(sys, "real_prefix") ) )' \
+	@$(python3) -c 'import sys; sys.exit( int( not hasattr(sys, "real_prefix") ) )' \
 		|| ( echo "$(red)A virtualenv must be active.$(normal)" ; false )
 
 
